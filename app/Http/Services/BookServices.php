@@ -34,6 +34,7 @@ class BookServices
             $book->image = $path;
         }
         $this->bookRepositories->saveDataBook($book);
+        toastr()->success('Data has been saved successfully!');
     }
 
     function editBook($id){
@@ -59,11 +60,13 @@ class BookServices
             $book->image = $path;
         }
         $this->bookRepositories->saveDataBook($book);
+        toastr()->success('Data has been saved successfully!');
     }
 
     function deleteBook($id){
         $book = $this->bookRepositories->findOrFail($id);
         $book->delete();
+        toastr()->error('Data has been saved successfully!');
     }
 
     function searchBook(Request $request){
